@@ -3,7 +3,10 @@ from selenium.webdriver.chrome.options import Options
 import time
 import re
 import pprint
+import json
+
 from topic_scaper import get_topic_data
+
 
 def get_subject_data(url, sample=False):
     options = Options()
@@ -80,3 +83,13 @@ if __name__ == '__main__':
     end = time.time()
     pprint.pprint(subject_dictionary)
     print(f"Time Elapsed: {end-start}")
+
+    with open('computer_networks.json', 'w') as f: 
+        json.dump(subject_dictionary, f, ensure_ascii=False)
+
+    with open('computer_networks_with_indents.json', 'w') as f: 
+        json.dump(subject_dictionary, f, indent=2, ensure_ascii=False)
+
+        
+    with open('computer_networks_ascii.json', 'w') as f: 
+        json.dump(subject_dictionary, f, indent=2, ensure_ascii=True)
