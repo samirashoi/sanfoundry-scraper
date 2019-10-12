@@ -4,7 +4,7 @@ import time
 import re
 import pprint
 
-def get_quiz_data(url):
+def get_topic_data(url):
     options = Options()
     # options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36")
     options.headless =True
@@ -64,7 +64,7 @@ if __name__=='__main__':
     example_url = 'https://www.sanfoundry.com/computer-networks-mcqs-basics/' 
 
     url = example_url if url == "" else url
-    
+
     start = time.time()
     q_d = get_quiz_data(url)
     pprint.pprint(q_d)
